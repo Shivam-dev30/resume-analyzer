@@ -49,7 +49,7 @@ Environment	      |          dotenv
 ⚙️ Installation
 
 1️⃣ Clone the Repository
-git clone https://github.com/YOUR_USERNAME/resume-analyzer.git
+git clone https://github.com/Shivam-dev30/resume-analyzer.git
 cd resume-analyzer
 
 2️⃣ Create a Virtual Environment
@@ -124,7 +124,9 @@ This project is licensed under the MIT License — feel free to modify and use i
 
 👤 Shivam (Developer)
 📧 Email: [mauryashivam609@gmail.com]
+
 💼 LinkedIn: [www.linkedin.com/in/shivammaurya01]
+
 🌐 GitHub: Shivam-dev30
 
 💡 “Your resume is your first impression — make it data-driven.”
