@@ -1,4 +1,4 @@
-🧠 AI Resume Analyzer (Groq API)
+#🧠 AI Resume Analyzer (Groq API)
 
 
 
@@ -9,7 +9,7 @@
 
 
 
-🚀 Overview
+#🚀 Overview
 
 AI Resume Analyzer is a Streamlit-based web app powered by the Groq API.
 It allows users to upload their resume (PDF or DOCX) and get a detailed analysis comparing it to a given job description — highlighting:
@@ -18,14 +18,14 @@ It allows users to upload their resume (PDF or DOCX) and get a detailed analysis
 
 ⚠️ Weaknesses and missing skills
 
-💡 Suggestions for improvement
+💡 Suggestions for improvement#
 
 📊 Keyword relevance score
 
-🎯 Demo Screenshot
+#🎯 Demo Screenshot
 ![alt text](image.png)
 
-🧩 Features
+#🧩 Features
 
 📄 Resume Upload: Supports PDF and DOCX formats
 
@@ -37,7 +37,7 @@ It allows users to upload their resume (PDF or DOCX) and get a detailed analysis
 
 ⚙️ Local + Secure: Uses .env file to store your API key safely
 
-🧰 Tech Stack
+#🧰 Tech Stack
 Component	Technology
 Frontend	Streamlit
 Backend	Python
@@ -45,7 +45,7 @@ AI Model	Groq LLaMA 3.3 70B
 File Handling	PyPDF2, python-docx
 Similarity Check	RapidFuzz
 Environment	dotenv
-⚙️ Installation
+3⚙️ Installation
 1️⃣ Clone the Repository
 git clone https://github.com/YOUR_USERNAME/resume-analyzer.git
 cd resume-analyzer
@@ -71,7 +71,7 @@ streamlit run app.py
 
 Then open the link shown in your terminal (usually http://localhost:8501).
 
-📂 Project Structure
+#📂 Project Structure
 resume-analyzer/
 │
 ├── app.py                # Main Streamlit App
@@ -80,7 +80,7 @@ resume-analyzer/
 ├── .gitignore            # To prevent key leaks
 └── README.md             # This file
 
-🧾 Sample Output
+#🧾 Sample Output
 ✅ Resume Score: 82%
 ✅ Strong Match for: Python, Machine Learning, Flask
 ⚠️ Missing Keywords: REST API, Leadership
@@ -107,14 +107,14 @@ Click “New App” → Connect to GitHub Repo.
 
 Add GROQ_API_KEY in Secrets section.
 
-Deploy 🚀
+#Deploy 🚀
 
 🤝 Contributing
 
 Pull requests are welcome!
 If you’d like to add features (like resume scoring charts or multiple JD comparison), feel free to fork the repo and submit PRs.
 
-📜 License
+#📜 License
 
 This project is licensed under the MIT License — feel free to modify and use it.
 
