@@ -38,14 +38,16 @@ It allows users to upload their resume (PDF or DOCX) and get a detailed analysis
 ⚙️ Local + Secure: Uses .env file to store your API key safely
 
 #🧰 Tech Stack
-Component	Technology
-Frontend	Streamlit
-Backend	Python
-AI Model	Groq LLaMA 3.3 70B
-File Handling	PyPDF2, python-docx
-Similarity Check	RapidFuzz
-Environment	dotenv
-3⚙️ Installation
+Component         |        	Technology 
+----------------------------------------
+Frontend	        |         Streamlit
+Backend	          |           Python
+AI Model	        |     Groq LLaMA 3.3 70B
+File Handling     | 	  PyPDF2, python-docx
+Similarity Check	|         RapidFuzz
+Environment	      |          dotenv
+⚙️ Installation
+
 1️⃣ Clone the Repository
 git clone https://github.com/YOUR_USERNAME/resume-analyzer.git
 cd resume-analyzer
