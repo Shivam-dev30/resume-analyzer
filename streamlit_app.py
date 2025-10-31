@@ -19,7 +19,7 @@ with st.sidebar:
     st.markdown("**Tip:** If analysis seems slow, the model is generating role keywords and feedback. Be patient.")
 
 uploaded_file = st.file_uploader("Upload Resume", type=["pdf", "docx", "txt"])
-target_role = st.text_input("Target Job Title (e.g., Data Analyst)", value="Data Analyst")
+target_role = st.text_input("Target Job Title (e.g., Data Analyst)", value="")
 analyze_btn = st.button("Analyze Resume")
 
 if uploaded_file and analyze_btn:
