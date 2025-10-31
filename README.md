@@ -2,7 +2,7 @@
 
 An AI-powered web application that analyzes resumes and suggests improvements based on job relevance, keyword optimization, and skill alignment.
 
-🔗 Live Demo: Resume Analyzer
+🔗 Live Demo: https://resume-analyzer-shivam-dev30.up.railway.app/
 
 💻 GitHub Profile: Shivam-dev30
 
@@ -21,21 +21,21 @@ An AI-powered web application that analyzes resumes and suggests improvements ba
 ☁️ Hosted on Railway.app
 
 🛠️ Tech Stack
-Category	Technologies Used
-Frontend	HTML5, CSS3, JavaScript, Bootstrap
-Backend	Python, Flask
-AI/ML	NLP (TF-IDF, Cosine Similarity, Scikit-learn)
-Database	SQLite / CSV-based storage
-Deployment	Railway.app
-Version Control	Git & GitHub
+Category	    |               Technologies Used
+Frontend	    |       HTML5, CSS3, JavaScript, Bootstrap
+Backend	            |                 Python, Flask
+AI/ML	            |   NLP (TF-IDF, Cosine Similarity, Scikit-learn)
+Database	    |             SQLite / CSV-based storage
+Deployment	    |                   Railway.app
+Version Control	    |                  Git & GitHub
+
 📸 Screenshots
 
-(Add screenshots of your UI here if available)
 
 Example:
 
-/static/images/screenshot1.png
-/static/images/screenshot2.png
+<img width="1918" height="860" alt="image" src="https://github.com/user-attachments/assets/7eb3d9c6-50c7-42ce-891b-960159901a38" />
+
 
 ⚙️ Installation Guide
 
@@ -89,7 +89,7 @@ Deploy automatically with CI/CD
 
 🧑‍💻 Author
 
-Shivam Kumar
+Shivam Maurya
 📍 B.Tech CSE | Full-Stack & AI Developer
 🌐 GitHub
 
