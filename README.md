@@ -61,17 +61,18 @@ python app.py
 The app will run locally at http://127.0.0.1:5000/
 
 📂 Folder Structure
-Resume-Analyzer/
-├── static/
-│   ├── css/
-│   ├── js/
-│   └── images/
-├── templates/
-│   ├── index.html
-│   ├── result.html
-├── app.py
-├── requirements.txt
-└── README.md
+
+             Resume-Analyzer/
+             ├── static/
+             │   ├── css/
+             ├── js/
+             │   └── images/
+             ├── templates/
+             │   ├── index.html
+             │   ├── result.html
+             ├── app.py
+             ├── requirements.txt
+             └── README.md
 
 🌐 Deployment
 
