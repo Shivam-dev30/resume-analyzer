@@ -42,20 +42,20 @@ Example:
 Follow these steps to run the project locally:
 
 # 1️⃣ Clone this repository
-git clone https://github.com/Shivam-dev30/Resume-Analyzer.git
-cd Resume-Analyzer
+       git clone https://github.com/Shivam-dev30/Resume-Analyzer.git
+            cd Resume-Analyzer
 
 # 2️⃣ Create a virtual environment
-python -m venv venv
-venv\Scripts\activate    # On Windows
+           python -m venv venv
+            venv\Scripts\activate    # On Windows
 # or
-source venv/bin/activate  # On Mac/Linux
+          source venv/bin/activate  # On Mac/Linux
 
 # 3️⃣ Install dependencies
-pip install -r requirements.txt
+           pip install -r requirements.txt
 
 # 4️⃣ Run the app
-python app.py
+          python app.py
 
 
 The app will run locally at http://127.0.0.1:5000/
@@ -80,13 +80,13 @@ The app is deployed on Railway
 .
 Deployment steps:
 
-Push the latest code to GitHub
+       Push the latest code to GitHub
 
-Connect the repo to Railway
+        Connect the repo to Railway
 
-Set up environment variables (if any)
+         Set up environment variables (if any)
 
-Deploy automatically with CI/CD
+          Deploy automatically with CI/CD
 
 🧑‍💻 Author
 
