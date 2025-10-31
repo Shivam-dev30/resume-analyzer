@@ -1,132 +1,108 @@
-#🧠 AI Resume Analyzer (Groq API)
+🧠 Resume Analyzer
 
+An AI-powered web application that analyzes resumes and suggests improvements based on job relevance, keyword optimization, and skill alignment.
 
+🔗 Live Demo: Resume Analyzer
 
+💻 GitHub Profile: Shivam-dev30
 
+🚀 Features
 
+📄 Upload resumes in PDF format
 
+🤖 AI-based text extraction and analysis
 
+🎯 Keyword matching against target job roles
 
+📊 Skill relevance scoring
 
+🧾 User-friendly dashboard for analysis results
 
-#🚀 Overview
+☁️ Hosted on Railway.app
 
-AI Resume Analyzer is a Streamlit-based web app powered by the Groq API.
-It allows users to upload their resume (PDF or DOCX) and get a detailed analysis comparing it to a given job description — highlighting:
+🛠️ Tech Stack
+Category	Technologies Used
+Frontend	HTML5, CSS3, JavaScript, Bootstrap
+Backend	Python, Flask
+AI/ML	NLP (TF-IDF, Cosine Similarity, Scikit-learn)
+Database	SQLite / CSV-based storage
+Deployment	Railway.app
+Version Control	Git & GitHub
+📸 Screenshots
 
-✅ Strengths and matching keywords
+(Add screenshots of your UI here if available)
 
-⚠️ Weaknesses and missing skills
+Example:
 
-💡 Suggestions for improvement#
+/static/images/screenshot1.png
+/static/images/screenshot2.png
 
-📊 Keyword relevance score
+⚙️ Installation Guide
 
-#🎯 Demo Screenshot
-![alt text](image.png)
+Follow these steps to run the project locally:
 
-#🧩 Features
+# 1️⃣ Clone this repository
+git clone https://github.com/Shivam-dev30/Resume-Analyzer.git
+cd Resume-Analyzer
 
-📄 Resume Upload: Supports PDF and DOCX formats
-
-🧠 AI-Powered Evaluation: Uses Groq’s LLaMA-3.3 model for accurate HR-style analysis
-
-🔍 Job Matching Insights: Highlights strengths, weaknesses, and missing keywords
-
-🧾 Keyword Relevance Scoring: Helps you optimize your resume for ATS (Applicant Tracking Systems)
-
-⚙️ Local + Secure: Uses .env file to store your API key safely
-
-#🧰 Tech Stack
-Component         |        	Technology 
-----------------------------------------
-Frontend	        |         Streamlit
-Backend	          |           Python
-AI Model	        |     Groq LLaMA 3.3 70B
-File Handling     | 	  PyPDF2, python-docx
-Similarity Check	|         RapidFuzz
-Environment	      |          dotenv
-⚙️ Installation
-
-1️⃣ Clone the Repository
-git clone https://github.com/Shivam-dev30/resume-analyzer.git
-cd resume-analyzer
-
-2️⃣ Create a Virtual Environment
+# 2️⃣ Create a virtual environment
 python -m venv venv
-venv\Scripts\activate   # (Windows)
+venv\Scripts\activate    # On Windows
 # or
-source venv/bin/activate  # (Mac/Linux)
+source venv/bin/activate  # On Mac/Linux
 
-3️⃣ Install Dependencies
+# 3️⃣ Install dependencies
 pip install -r requirements.txt
 
-4️⃣ Add Your .env File
-
-Create a file named .env in the root directory and add:
-
-GROQ_API_KEY=shivam8595
-
-5️⃣ Run the App
-streamlit run app.py
+# 4️⃣ Run the app
+python app.py
 
 
-Then open the link shown in your terminal (usually http://localhost:8501).
+The app will run locally at http://127.0.0.1:5000/
 
-#📂 Project Structure
-resume-analyzer/
-│
-├── app.py                # Main Streamlit App
-├── requirements.txt      # Dependencies
-├── .env                  # Your Groq API key
-├── .gitignore            # To prevent key leaks
-└── README.md             # This file
+📂 Folder Structure
+Resume-Analyzer/
+├── static/
+│   ├── css/
+│   ├── js/
+│   └── images/
+├── templates/
+│   ├── index.html
+│   ├── result.html
+├── app.py
+├── requirements.txt
+└── README.md
 
-#🧾 Sample Output
-✅ Resume Score: 82%
-✅ Strong Match for: Python, Machine Learning, Flask
-⚠️ Missing Keywords: REST API, Leadership
-💡 Suggestion: Add measurable impact metrics to projects.
+🌐 Deployment
 
-🛡️ Security Notes
+The app is deployed on Railway
+.
+Deployment steps:
 
-Do not push .env file to GitHub.
+Push the latest code to GitHub
 
-Your Groq API key must remain private.
+Connect the repo to Railway
 
-.gitignore already ensures .env is excluded.
+Set up environment variables (if any)
 
-🌍 Deploying on Streamlit Cloud
+Deploy automatically with CI/CD
 
-You can deploy this app directly on Streamlit Cloud
-:
+🧑‍💻 Author
 
-Push your code to GitHub.
+Shivam Kumar
+📍 B.Tech CSE | Full-Stack & AI Developer
+🌐 GitHub
 
-Go to Streamlit Cloud and log in.
+🔗 Live App
 
-Click “New App” → Connect to GitHub Repo.
+⭐ Acknowledgments
 
-Add GROQ_API_KEY in Secrets section.
+Flask documentation
 
-#Deploy 🚀
+Scikit-learn for NLP processing
 
-🤝 Contributing
+Railway for cloud deployment
 
-Pull requests are welcome!
-If you’d like to add features (like resume scoring charts or multiple JD comparison), feel free to fork the repo and submit PRs.
+OpenAI/ChatGPT for project guidance
 
-#📜 License
-
-This project is licensed under the MIT License — feel free to modify and use it.
-
-💬 Connect with Me
-
-👤 Shivam (Developer)
-📧 Email: [mauryashivam609@gmail.com]
-
-💼 LinkedIn: [www.linkedin.com/in/shivammaurya01]
-
-🌐 GitHub: Shivam-dev30
-
-💡 “Your resume is your first impression — make it data-driven.”
+💡 If you like this project, give it a ⭐ on GitHub!
