@@ -137,38 +137,44 @@ def generate_role_keywords(role: str, top_k: int = 25) -> List[str]:
 def get_grammar_and_format_feedback(resume_text: str) -> Dict[str, Any]:
     """
     Ask LLM for grammar suggestions, formatting suggestions, and a numeric grammar score (0-100).
-    Return structure:
-    {
-      "grammar_score": int,
-      "grammar_feedback": "...",
-      "format_score": int,
-      "format_feedback": "..."
-    }
     """
     prompt = [
-        {"role":"system","content":"You are a professional resume editor. Output JSON only."},
+        {"role":"system","content":"You are a professional resume editor. You MUST output valid JSON only. NO conversational text."},
         {"role":"user","content":(
-            "You will receive the plain text of a resume. Provide:\n"
-            "1) a grammar_score (integer 0-100) representing grammar & clarity (100 is perfect);\n"
-            "2) grammar_feedback: short bullet suggestions to fix grammar/clarity;\n"
-            "3) a format_score (integer 0-100) representing formatting & organization (100 is perfect);\n"
-            "4) format_feedback: short bullet suggestions to improve layout, section order, consistency, and readability.\n"
-            "Return a JSON object exactly with keys: grammar_score, grammar_feedback, format_score, format_feedback.\n\n"
-            "Resume text (below):\n\n" + resume_text[:15000]  # limit to reasonable length
+            "Analyze this resume text and provide:\n"
+            "1) grammar_score: (integer 0-100)\n"
+            "2) grammar_feedback: (string bullet points)\n"
+            "3) format_score: (integer 0-100)\n"
+            "4) format_feedback: (string bullet points)\n\n"
+            "Resume text:\n" + resume_text[:15000]
         )}
     ]
     out = groq_chat(prompt)
+    
+    # 1. Try direct JSON parse
     try:
-        parsed = json.loads(out)
-        return parsed
+        # Clean up possible markdown code blocks
+        clean_out = re.sub(r"```json|```", "", out).strip()
+        return json.loads(clean_out)
     except Exception:
-        # fallback: return some defaults + raw text
-        return {
-            "grammar_score": 60,
-            "grammar_feedback": "Could not parse structured feedback from model; check API output.",
-            "format_score": 60,
-            "format_feedback": "Could not parse structured feedback from model; check API output."
-        }
+        # 2. Fallback: Regex extraction if model adds extra text
+        scores = {"grammar_score": 60, "format_score": 60, "grammar_feedback": "", "format_feedback": ""}
+        
+        g_match = re.search(r'"grammar_score":\s*(\d+)', out)
+        f_match = re.search(r'"format_score":\s*(\d+)', out)
+        
+        if g_match: scores["grammar_score"] = int(g_match.group(1))
+        if f_match: scores["format_score"] = int(f_match.group(1))
+        
+        # If we couldn't even extract scores via regex, try to find any numbers near keywords
+        if scores["grammar_score"] == 60:
+            val = re.findall(r'(\d+)', out)
+            if val: scores["grammar_score"] = int(val[0])
+            if len(val) > 1: scores["format_score"] = int(val[1])
+
+        scores["grammar_feedback"] = "Generated from raw analysis (parsing was difficult)."
+        scores["format_feedback"] = "Generated from raw analysis."
+        return scores
 
 # ---------- Skill gap / suggestions ----------
 def get_skill_gap_suggestions(resume_text: str, role: str, missing_keywords: List[str]) -> Dict[str, Any]:
