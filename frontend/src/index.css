@@ -2,26 +2,88 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
 :root {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 230 40% 4%;
+    --foreground: 0 0% 98%;
+    --card: 230 40% 6%;
+    --card-foreground: 0 0% 98%;
+    --popover: 230 40% 6%;
+    --popover-foreground: 0 0% 98%;
     --primary: 217.2 91.2% 59.8%;
     --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 224.3 76.3% 48%;
+    --radius: 1rem;
 }
 
 @layer base {
+    * {
+        @apply border-white/5;
+    }
+
     body {
-        @apply bg-background text-foreground;
-        font-family: 'Inter', system-ui, -apple-system, sans-serif;
+        @apply bg-slate-950 text-slate-50 antialiased;
+        font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        @apply font-semibold tracking-tight leading-tight;
+        font-family: 'Outfit', sans-serif;
     }
 }
 
-.glass {
-    background: rgba(255, 255, 255, 0.03);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.05);
+.glass-card {
+    @apply bg-white/[0.02] border border-white/[0.05] backdrop-blur-xl shadow-2xl transition-all duration-300;
+}
+
+.premium-gradient {
+    background: radial-gradient(circle at 50% 0%, rgba(59, 130, 246, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 100% 100%, rgba(99, 102, 241, 0.1) 0%, transparent 40%);
+}
+
+.animate-glow {
+    animation: glow 4s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        box-shadow: 0 0 20px -5px rgba(59, 130, 246, 0.2);
+    }
+
+    to {
+        box-shadow: 0 0 30px 2px rgba(59, 130, 246, 0.3);
+    }
 }
 
 .gradient-text {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-indigo-500;
+    @apply bg-clip-text text-transparent bg-gradient-to-br from-blue-400 via-indigo-400 to-violet-500;
+}
+
+.btn-primary {
+    @apply relative overflow-hidden bg-blue-600 hover:bg-blue-500 text-white font-semibold py-4 px-8 rounded-2xl transition-all duration-300 shadow-xl shadow-blue-600/20 active:scale-95;
+}
+
+.btn-primary::after {
+    content: '';
+    @apply absolute top-0 left-[-100%] w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent skew-x-12 transition-all duration-1000;
+}
+
+.btn-primary:hover::after {
+    @apply left-[100%];
 }
