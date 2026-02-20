@@ -16,6 +16,44 @@ if not GROQ_API_KEY:
     raise EnvironmentError("Set GROQ_API_KEY in your environment.")
 client = Groq(api_key=GROQ_API_KEY)
 
+# ---------- Automatic Model Selection ----------
+def get_best_model() -> str:
+    """
+    Dynamically fetches available models from Groq and selects the best one 
+    based on custom priority (preferring 70B+ versatile models).
+    """
+    try:
+        models = client.models.list()
+        # Custom priority list (Production-grade models)
+        priority = [
+            "llama-3.3-70b-versatile",
+            "llama-3.1-70b-versatile",
+            "llama3-70b-8192",
+            "llama-3.1-8b-instant",
+            "llama-guard-3-8b"
+        ]
+        available_ids = [m.id for m in models.data]
+        
+        # Check priority list
+        for model_id in priority:
+            if model_id in available_ids:
+                return model_id
+        
+        # If no priority model found, pick the first available one that isn't a whisper model
+        for m in available_ids:
+            if "whisper" not in m:
+                return m
+                
+        return "llama-3.3-70b-versatile" # Absolute fallback
+    except Exception as e:
+        print(f"Warning: Model detection failed ({e}). Using fallback.")
+        return "llama-3.3-70b-versatile"
+
+# Cache the selected model to avoid redundant API calls
+ACTIVE_MODEL = get_best_model()
+print(f"Active AI Engine: {ACTIVE_MODEL}")
+
+
 
 # ---------- Text extraction ----------
 def extract_text_from_pdf(file_bytes: bytes) -> str:
@@ -55,10 +93,11 @@ def extract_text_from_file(filename: str, file_bytes: bytes) -> Tuple[str, str]:
         except Exception:
             return file_bytes.decode("utf-8", errors="ignore"), "txt"
 
-# ---------- OpenAI helpers ----------
-def groq_chat(messages: List[Dict[str, str]], model: str = "llama-3.3-70b-versatile", temperature: float = 0.2):
+# ---------- OpenAI/Groq helpers ----------
+def groq_chat(messages: List[Dict[str, str]], model: str = None, temperature: float = 0.2):
+    target_model = model if model else ACTIVE_MODEL
     response = client.chat.completions.create(
-        model=model,
+        model=target_model,
         messages=messages,
         temperature=temperature,
         max_tokens=2048
