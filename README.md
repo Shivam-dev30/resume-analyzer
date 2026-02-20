@@ -2,7 +2,7 @@
 
 An AI-powered web application that analyzes resumes and suggests improvements based on job relevance, keyword optimization, and skill alignment.
 
-🔗 Live Demo: https://resume-analyzer-shivam-dev30.up.railway.app/
+🔗 Live Demo: https://resume-analyzer-1-peach.vercel.app
 
 💻 GitHub Profile: Shivam-dev30
 
