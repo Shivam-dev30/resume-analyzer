@@ -6,3 +6,6 @@ rapidfuzz>=2.13.7
 python-multipart>=0.0.6
 tqdm>=4.65.0
 python-dotenv
+flask
+flask-cors
+gunicorn
