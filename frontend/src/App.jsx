@@ -480,8 +480,8 @@ const App = () => {
                             <ul className="space-y-5 text-slate-500 font-bold text-sm">
                                 <li><a href="#" className="hover:text-blue-400 transition-colors">Documentation</a></li>
                                 <li><a href="#" className="hover:text-blue-400 transition-colors">Groq LPU Engine</a></li>
-                                <li><a href="#" className="hover:text-blue-400 transition-colors">Privacy Policy</a></li>
-                                <li><a href="#" className="hover:text-blue-400 transition-colors">Terms of Service</a></li>
+                                <li><a href="?page=privacy" className="hover:text-blue-400 transition-colors">Privacy Policy</a></li>
+                                <li><a href="?page=terms" className="hover:text-blue-400 transition-colors">Terms of Service</a></li>
                             </ul>
                         </div>
 
