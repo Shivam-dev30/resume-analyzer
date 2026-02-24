@@ -68,16 +68,20 @@ const App = () => {
 
             <div className="relative z-10 flex-grow max-w-7xl mx-auto px-6 py-16 w-full">
                 {/* Navigation / Mini Header */}
-                <nav className="flex justify-between items-center mb-16">
-                    <div className="flex items-center gap-2 group cursor-pointer">
+                <nav className="flex flex-col md:flex-row justify-between items-center gap-6 mb-16">
+                    <div className="flex items-center gap-2 group cursor-pointer" onClick={() => window.location.href = '/'}>
                         <div className="p-2 bg-blue-600 rounded-xl group-hover:rotate-12 transition-transform">
                             <Zap className="w-5 h-5 text-white" />
                         </div>
                         <span className="font-bold text-xl tracking-tight uppercase">Resume.AI</span>
                     </div>
-                    <div className="flex items-center gap-6 text-sm font-medium text-slate-400">
-                        <a href="https://github.com/Shivam-dev30" target="_blank" rel="noreferrer" className="hover:text-blue-400 transition-colors">GitHub</a>
-                        <a href="https://shivam-portfolio-gamma-ruby.vercel.app/" target="_blank" rel="noreferrer" className="bg-white/5 hover:bg-white/10 px-4 py-2 rounded-full border border-white/5 transition-all">My Portfolio</a>
+                    <div className="flex flex-wrap items-center justify-center gap-4 text-sm font-medium text-slate-400">
+                        <a href="/" className="hover:text-blue-400 transition-colors">Home</a>
+                        <a href="?page=privacy" className="hover:text-blue-400 transition-colors">Privacy Policy</a>
+                        <a href="?page=terms" className="hover:text-blue-400 transition-colors">Terms of Service</a>
+                        <a href="mailto:student18171@gmail.com" className="hover:text-blue-400 transition-colors">Contact Us</a>
+                        <a href="https://shivam-portfolio-gamma-ruby.vercel.app/" target="_blank" rel="noreferrer" className="hover:text-blue-400 transition-colors">About Us</a>
+                        <a href="https://shivam-portfolio-gamma-ruby.vercel.app/" target="_blank" rel="noreferrer" className="bg-white/5 hover:bg-white/10 px-4 py-2 rounded-full border border-white/5 transition-all text-xs hidden sm:block">My Portfolio</a>
                     </div>
                 </nav>
 
@@ -490,7 +494,7 @@ const App = () => {
                             <ul className="space-y-5 text-slate-500 font-bold text-sm">
                                 <li className="flex items-center gap-3 justify-center md:justify-start hover:text-white transition-colors">
                                     <ExternalLink className="w-4 h-4 text-blue-500" />
-                                    <a href="mailto:contact@shivam.dev">contact@shivam.dev</a>
+                                    <a href="mailto:student18171@gmail.com">student18171@gmail.com</a>
                                 </li>
                                 <li className="flex items-center gap-3 justify-center md:justify-start">
                                     <Globe className="w-4 h-4 text-indigo-500" />

@@ -5,13 +5,20 @@ const TermsOfService = () => {
     return (
         <div className="min-h-screen flex flex-col premium-gradient bg-slate-950 text-slate-50 selection:bg-blue-500/30">
             <div className="relative z-10 flex-grow max-w-4xl mx-auto px-6 py-16 w-full">
-                <nav className="mb-12">
+                <nav className="flex flex-col md:flex-row justify-between items-center gap-6 mb-12">
                     <button
                         onClick={() => window.location.href = '/'}
                         className="flex items-center gap-2 text-slate-400 hover:text-white transition-colors"
                     >
                         <ChevronLeft className="w-5 h-5" /> Back to Home
                     </button>
+                    <div className="flex flex-wrap items-center justify-center gap-4 text-sm font-medium text-slate-400">
+                        <a href="/" className="hover:text-blue-400 transition-colors">Home</a>
+                        <a href="?page=privacy" className="hover:text-blue-400 transition-colors">Privacy Policy</a>
+                        <a href="?page=terms" className="hover:text-blue-400 transition-colors">Terms of Service</a>
+                        <a href="mailto:student18171@gmail.com" className="hover:text-blue-400 transition-colors">Contact Us</a>
+                        <a href="https://shivam-portfolio-gamma-ruby.vercel.app/" target="_blank" rel="noreferrer" className="hover:text-blue-400 transition-colors">About Us</a>
+                    </div>
                 </nav>
 
                 <div className="glass-card p-10 md:p-14 rounded-[2.5rem]">
@@ -62,7 +69,7 @@ const TermsOfService = () => {
 
                         <section className="space-y-4">
                             <h2 className="text-2xl justify-start font-bold text-white">6. Contact Information</h2>
-                            <p>For questions or concerns regarding these Terms of Service, please contact us at: <a href="mailto:contact@shivam.dev" className="text-indigo-400 hover:text-indigo-300">contact@shivam.dev</a></p>
+                            <p>For questions or concerns regarding these Terms of Service, please contact us at: <a href="mailto:student18171@gmail.com" className="text-indigo-400 hover:text-indigo-300">student18171@gmail.com</a></p>
                         </section>
                     </div>
                 </div>
